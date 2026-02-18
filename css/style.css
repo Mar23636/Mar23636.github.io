@@ -1,158 +1,175 @@
-/* RESET BÁSICO */
+/* IMPORTACIÓN DE FUENTE MODERNA */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* RESET Y VARIABLES */
+:root {
+    --primary: #6366f1; /* Indigo moderno */
+    --secondary: #4f46e5;
+    --dark: #1e293b;
+    --light: #f8fafc;
+    --glass: rgba(255, 255, 255, 0.8);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ESTILO GENERAL */
 body {
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    background-color: #f4f6fb;
-    color: #333;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    color: var(--dark);
     line-height: 1.6;
+    min-height: 100vh;
 }
 
-/* HEADER */
+/* HEADER CON ESTILO PROFESIONAL */
 header {
-    background: linear-gradient(135deg, #1f3c88, #4b6cb7);
+    background: linear-gradient(135deg, #1e293b, #0f172a);
     color: white;
     text-align: center;
-    padding: 40px 20px;
+    padding: 60px 20px;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); /* Corte diagonal moderno */
 }
 
 header h1 {
-    font-size: 36px;
+    font-size: 2.5rem;
+    letter-spacing: -1px;
     margin-bottom: 10px;
 }
 
 header p {
-    font-size: 18px;
-    opacity: 0.9;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: #94a3b8;
 }
 
-/* NAV */
+/* NAVEGACIÓN TIPO FLOTANTE */
 nav {
-    background-color: #162b63;
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    padding: 12px 0;
-}
-
-nav ul li {
-    margin: 0 20px;
+    padding: 15px 0;
 }
 
 nav ul li a {
-    color: white;
+    color: var(--dark);
     text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin: 0 15px;
+    transition: 0.3s;
+    position: relative;
 }
 
-nav ul li a:hover {
-    color: #ffd369;
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary);
+    transition: 0.3s;
 }
 
-/* MAIN */
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* CONTENEDOR PRINCIPAL EFECTO TARJETA */
 main {
     max-width: 900px;
-    margin: 40px auto;
-    background-color: white;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin: -30px auto 40px; /* Sube un poco para entrar en el header */
+    background: white;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-/* SECCIONES */
-section {
-    margin-bottom: 40px;
-}
-
+/* SECCIONES Y TÍTULOS */
 section h2 {
-    color: #1f3c88;
-    font-size: 24px;
-    border-bottom: 3px solid #e0e6f5;
-    padding-bottom: 8px;
-    margin-bottom: 15px;
+    color: var(--dark);
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-/* TEXTO */
-p {
-    font-size: 16px;
-    margin-bottom: 12px;
+section h2::before {
+    content: '';
+    width: 4px;
+    height: 24px;
+    background: var(--primary);
+    border-radius: 10px;
 }
 
-/* --- MEJORA: SECCIÓN DE HABILIDADES (TARJETAS) --- */
-/* Aplicado según la tarea #1 */
+/* --- HABILIDADES: TARJETAS CREATIVAS --- */
 section ul {
     list-style: none;
-    margin-left: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-    padding: 10px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Rejilla automática */
+    gap: 15px;
 }
 
 section ul li {
-    background-color: #e0e6f5;
-    color: #1f3c88;
-    padding: 10px 22px;
-    border-radius: 50px; /* Estilo de etiqueta/cápsula */
-    font-weight: 600;
-    font-size: 14px;
-    border: 1px solid #cbd5e1;
-    transition: all 0.3s ease;
-    margin-bottom: 0; /* Ajuste de margen para el flex */
+    background: var(--light);
+    color: var(--dark);
+    padding: 15px;
+    text-align: center;
+    border-radius: 15px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    border: 1px solid #e2e8f0;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 section ul li:hover {
-    background-color: #1f3c88;
-    color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 4px 10px rgba(31, 60, 136, 0.2);
-    cursor: default;
+    background: white;
+    color: var(--primary);
+    border-color: var(--primary);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.1);
 }
 
 /* FOOTER */
 footer {
-    background-color: #1f3c88;
-    color: white;
+    background: #0f172a;
+    color: #64748b;
     text-align: center;
-    padding: 20px;
-    font-size: 14px;
+    padding: 30px;
+    font-size: 0.8rem;
 }
 
-/* --- MEJORA: DISEÑO RESPONSIVE (MÓVIL) --- */
-/* Ajuste para pantallas pequeñas según la tarea #1 */
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 28px;
+/* --- DISEÑO RESPONSIVE EXTREMO --- */
+@media (max-width: 768px) {
+    header {
+        padding: 80px 20px;
+    }
+    
+    main {
+        margin: 20px;
+        padding: 30px;
     }
 
     nav ul {
-        flex-direction: column;
-        align-items: center;
         gap: 10px;
-        padding: 15px 0;
-    }
-
-    main {
-        margin: 20px;
-        padding: 25px;
     }
 
     section ul {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    section ul li {
-        text-align: center;
+        grid-template-columns: 1fr 1fr; /* Dos columnas en móvil */
     }
 }
