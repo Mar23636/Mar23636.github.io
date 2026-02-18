@@ -1,0 +1,106 @@
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ESTILO GENERAL */
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: #f4f6fb;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #1f3c88, #4b6cb7);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+/* NAV */
+nav {
+    background-color: #162b63;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 12px 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffd369;
+}
+
+/* MAIN */
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+}
+
+/* SECCIONES */
+section {
+    margin-bottom: 40px;
+}
+
+section h2 {
+    color: #1f3c88;
+    font-size: 24px;
+    border-bottom: 3px solid #e0e6f5;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+/* TEXTO */
+p {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+/* LISTAS */
+ul li {
+    margin-bottom: 8px;
+}
+
+/* HABILIDADES */
+section ul {
+    margin-left: 20px;
+}
+
+/* FOOTER */
+footer {
+    background-color: #1f3c88;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
