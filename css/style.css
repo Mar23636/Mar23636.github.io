@@ -65,6 +65,7 @@ main {
     background-color: white;
     padding: 40px;
     border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
 /* SECCIONES */
@@ -86,14 +87,36 @@ p {
     margin-bottom: 12px;
 }
 
-/* LISTAS */
-ul li {
-    margin-bottom: 8px;
+/* --- MEJORA: SECCIÓN DE HABILIDADES (TARJETAS) --- */
+/* Aplicado según la tarea #1 */
+section ul {
+    list-style: none;
+    margin-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    padding: 10px 0;
 }
 
-/* HABILIDADES */
-section ul {
-    margin-left: 20px;
+section ul li {
+    background-color: #e0e6f5;
+    color: #1f3c88;
+    padding: 10px 22px;
+    border-radius: 50px; /* Estilo de etiqueta/cápsula */
+    font-weight: 600;
+    font-size: 14px;
+    border: 1px solid #cbd5e1;
+    transition: all 0.3s ease;
+    margin-bottom: 0; /* Ajuste de margen para el flex */
+}
+
+section ul li:hover {
+    background-color: #1f3c88;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(31, 60, 136, 0.2);
+    cursor: default;
 }
 
 /* FOOTER */
@@ -103,4 +126,33 @@ footer {
     text-align: center;
     padding: 20px;
     font-size: 14px;
+}
+
+/* --- MEJORA: DISEÑO RESPONSIVE (MÓVIL) --- */
+/* Ajuste para pantallas pequeñas según la tarea #1 */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 28px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 15px 0;
+    }
+
+    main {
+        margin: 20px;
+        padding: 25px;
+    }
+
+    section ul {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    section ul li {
+        text-align: center;
+    }
 }
