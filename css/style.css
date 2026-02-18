@@ -1,31 +1,86 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+/* VARIABLES Y FUENTES */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap');
 
-<section id="habilidades">
-    <h2>Mis Habilidades</h2>
-    <ul class="skills-grid">
-        <li class="skill-card card-1">
-            <i class="fab fa-html5"></i>
-            <span>HTML5</span>
-        </li>
-        <li class="skill-card card-2">
-            <i class="fab fa-css3-alt"></i>
-            <span>CSS3</span>
-        </li>
-        <li class="skill-card card-3">
-            <i class="fab fa-js"></i>
-            <span>JavaScript</span>
-        </li>
-        <li class="skill-card card-4">
-            <i class="fab fa-react"></i>
-            <span>React</span>
-        </li>
-        <li class="skill-card card-5">
-            <i class="fas fa-comments"></i>
-            <span>Comunicación</span>
-        </li>
-        <li class="skill-card card-6">
-            <i class="fas fa-users"></i>
-            <span>Liderazgo</span>
-        </li>
-    </ul>
-</section>
+:root {
+    --bg-dark: #0f172a;
+    --card-bg: #1e293b;
+    --text: #f8fafc;
+    /* Colores variados para las tarjetas */
+    --color-1: #38bdf8; /* Celeste */
+    --color-2: #fb7185; /* Rosa */
+    --color-3: #facc15; /* Amarillo */
+    --color-4: #4ade80; /* Verde */
+    --color-5: #a78bfa; /* Morado */
+    --color-6: #fb923c; /* Naranja */
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text);
+}
+
+/* GRID DE HABILIDADES (TAREA: CONVERTIR EN TARJETAS) */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive automático */
+    gap: 20px;
+    list-style: none;
+    padding: 20px;
+}
+
+.skill-card {
+    background: var(--card-bg);
+    padding: 30px 20px;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* ICONOS CON TAMAÑO */
+.skill-card i {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+/* COLORES VARIADOS POR CLASE */
+.card-1 i { color: var(--color-1); }
+.card-1:hover { border: 2px solid var(--color-1); box-shadow: 0 0 20px rgba(56, 189, 248, 0.2); }
+
+.card-2 i { color: var(--color-2); }
+.card-2:hover { border: 2px solid var(--color-2); box-shadow: 0 0 20px rgba(251, 113, 133, 0.2); }
+
+.card-3 i { color: var(--color-3); }
+.card-3:hover { border: 2px solid var(--color-3); box-shadow: 0 0 20px rgba(250, 204, 21, 0.2); }
+
+.card-4 i { color: var(--color-4); }
+.card-4:hover { border: 2px solid var(--color-4); box-shadow: 0 0 20px rgba(74, 222, 128, 0.2); }
+
+.card-5 i { color: var(--color-5); }
+.card-5:hover { border: 2px solid var(--color-5); box-shadow: 0 0 20px rgba(167, 139, 250, 0.2); }
+
+.card-6 i { color: var(--color-6); }
+.card-6:hover { border: 2px solid var(--color-6); box-shadow: 0 0 20px rgba(251, 146, 60, 0.2); }
+
+/* ANIMACIÓN AL PASAR EL MOUSE */
+.skill-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    background: #2d3748;
+}
+
+/* RESPONSIVE (CELULAR) */
+@media (max-width: 600px) {
+    .skills-grid {
+        grid-template-columns: 1fr 1fr; /* Dos columnas en móvil */
+        gap: 15px;
+    }
+    
+    .skill-card {
+        padding: 20px 10px;
+    }
+}
